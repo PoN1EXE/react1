@@ -1,8 +1,8 @@
-import Button from './Button/Button.jsx'
+import { Button } from './Button/Button.jsx'
 import { ways, differences } from '../data.js'
 import { useState } from 'react'
 
-export default function ButtonSection() {
+const ButtonSection = () => {
   const [contentType, setContentType] = useState(null)
 
   console.log('app render')
@@ -30,3 +30,5 @@ export default function ButtonSection() {
     </section>
   )
 }
+
+export { ButtonSection }

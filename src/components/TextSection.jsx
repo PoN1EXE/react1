@@ -1,7 +1,7 @@
-import WayToText from './WayToText.jsx'
+import { WayToText } from './WayToText.jsx'
 import { ways, differences } from '../data.js'
 
-export default function TextSection() {
+const TextSection = () => {
   return (
     <section>
       <h3>Lorem Ipsum is simply dummy text</h3>
@@ -14,3 +14,5 @@ export default function TextSection() {
     </section>
   )
 }
+
+export { TextSection }

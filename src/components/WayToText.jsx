@@ -1,10 +1,9 @@
-export default function WayToText({ title, description }) {
-  return (
-    <li>
-      <p>
-        <strong>{title}</strong>
-        {description}
-      </p>
-    </li>
-  )
-}
+const WayToText = ({ title, description }) => (
+  <li>
+    <p>
+      <strong>{title}</strong>
+      {description}
+    </p>
+  </li>
+)
+export { WayToText }

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import logo from '/logo-name.svg'
 import './Header.css'
 
-export default function Header() {
+const Header = () => {
   const [now, setNow] = useState(new Date())
 
   useEffect(() => {
@@ -21,3 +21,5 @@ export default function Header() {
     </header>
   )
 }
+
+export { Header }

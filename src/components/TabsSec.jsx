@@ -1,6 +1,6 @@
-import Button from './Button/Button'
+import { Button } from './Button/Button'
 
-export default function TabsSec({ active, onChange }) {
+const TabsSec = ({ active, onChange }) => {
   return (
     <section style={{ marginBottom: '20px' }}>
       <Button isActive={active === 'main'} onClick={() => onChange('main')}>
@@ -12,3 +12,5 @@ export default function TabsSec({ active, onChange }) {
     </section>
   )
 }
+
+export { TabsSec }
