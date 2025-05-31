@@ -5,11 +5,8 @@ import { useState } from 'react'
 const ButtonSection = () => {
   const [contentType, setContentType] = useState(null)
 
-  console.log('app render')
-
   function handleClick(type) {
     setContentType(type)
-    console.log(contentType)
   }
 
   return (

@@ -1,4 +1,5 @@
 import { Button } from './Button/Button'
+import { EffectSec } from './EffectSec'
 
 const TabsSec = ({ active, onChange }) => {
   return (
@@ -8,6 +9,9 @@ const TabsSec = ({ active, onChange }) => {
       </Button>
       <Button isActive={active === 'feedback'} onClick={() => onChange('feedback')}>
         Обратная связь
+      </Button>
+      <Button isActive={active === 'effect'} onClick={() => onChange('effect')}>
+        Effect
       </Button>
     </section>
   )

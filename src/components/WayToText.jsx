@@ -1,7 +1,7 @@
 const WayToText = ({ title, description }) => (
   <li>
     <p>
-      <strong>{title}</strong>
+      <span>{title}</span>
       {description}
     </p>
   </li>

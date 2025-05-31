@@ -5,9 +5,10 @@ import { IntroSection } from './components/IntroSection.jsx'
 import { TabsSec } from './components/TabsSec.jsx'
 import { FeedBack } from './components/FeedBack.jsx'
 import { useState } from 'react'
+import { EffectSec } from './components/EffectSec.jsx'
 
 const App = () => {
-  const [tab, setTab] = useState('feedback')
+  const [tab, setTab] = useState('effect')
 
   return (
     <>
@@ -24,6 +25,7 @@ const App = () => {
         )}
 
         {tab === 'feedback' && <FeedBack />}
+        {tab === 'effect' && <EffectSec />}
       </main>
     </>
   )
