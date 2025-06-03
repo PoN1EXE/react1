@@ -1,21 +1,25 @@
 import { useEffect, useState, useCallback } from 'react'
 import { Button } from './Button/Button'
 import { Modal } from './Modal/Modal'
-import { styled } from 'styled-components'
-import { useInput } from '../hooks/useInput'
+import { useSearchInput } from '../hooks/useSearchInput'
 
-const EffectSec = () => {
-  const input = useInput()
+const UserSearchWithModal = () => {
+  const input = useSearchInput()
   const [modal, setModal] = useState(false)
   const [loading, setLoading] = useState(false)
   const [users, setUsers] = useState([])
 
   const fetchUsers = useCallback(async () => {
     setLoading(true)
-    const response = await fetch('https://jsonplaceholder.typicode.com/users')
-    const users = await response.json()
-    setUsers(users)
-    setLoading(false)
+    try {
+      const response = await fetch('https://jsonplaceholder.typicode.com/users')
+      const users = await response.json()
+      setUsers(users)
+    } catch (error) {
+      alert('Ошибка получения пользователей')
+    } finally {
+      setLoading(false)
+    }
   }, [])
 
   useEffect(() => {
@@ -40,7 +44,7 @@ const EffectSec = () => {
         <Button onClick={() => setModal(false)}>Закрыть</Button>
       </Modal>
 
-      {loading && <p>Loading...</p>}
+      {loading ? <p>Loading...</p> : null}
 
       {!loading && (
         <>
@@ -58,4 +62,4 @@ const EffectSec = () => {
   )
 }
 
-export { EffectSec }
+export { UserSearchWithModal }

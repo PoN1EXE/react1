@@ -5,7 +5,7 @@ import { IntroSection } from './components/IntroSection.jsx'
 import { TabsSec } from './components/TabsSec.jsx'
 import { FeedBack } from './components/FeedBack.jsx'
 import { useState } from 'react'
-import { EffectSec } from './components/EffectSec.jsx'
+import { UserSearchWithModal } from './components/UserSearchWithModal.jsx'
 
 const App = () => {
   const [tab, setTab] = useState('effect')
@@ -25,7 +25,7 @@ const App = () => {
         )}
 
         {tab === 'feedback' && <FeedBack />}
-        {tab === 'effect' && <EffectSec />}
+        {tab === 'effect' && <UserSearchWithModal />}
       </main>
     </>
   )

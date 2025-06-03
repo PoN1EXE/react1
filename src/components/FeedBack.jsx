@@ -8,6 +8,9 @@ const FeedBack = () => {
   })
 
   const isNameValid = form.name.trim().length > 0
+  const handleChange = (field) => (event) => {
+    setForm((prev) => ({ ...prev, [field]: event.target.value }))
+  }
 
   return (
     <section>
@@ -23,19 +26,13 @@ const FeedBack = () => {
           style={{
             border: form.name.trim().length ? undefined : '1px solid red',
           }}
-          onChange={(event) => {
-            setForm((prevForm) => ({ ...prevForm, name: event.target.value }))
-          }}
+          onChange={handleChange('name')}
         />
 
         <label htmlFor='reason'>Причина обращения</label>
-        <select
-          id='reason'
-          className='control'
-          value={form.reason}
-          onChange={(event) => {
-            setForm((prevForm) => ({ ...prevForm, reason: event.target.value }))
-          }}>
+        <select>
+          id='reason' className='control' value={form.reason}
+          onChange={handleChange('reason')}
           <option value='error'>Ошибка</option>
           <option value='help'>Нужна помощь ?</option>
           <option value='strength'>я крайне сильный</option>
